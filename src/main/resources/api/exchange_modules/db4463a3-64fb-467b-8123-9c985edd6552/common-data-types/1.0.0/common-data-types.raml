@@ -1,0 +1,58 @@
+#%RAML 1.0 Library
+usage: Used for common data types across all domains
+
+types:
+  fieldValidationType:
+    type: object
+    properties:
+      field:
+        type: string
+        description: Input field that is missing or not compliant to the specification
+        required: true
+      description:
+        type: string
+        description: Provides the details about the validation error
+        required: true
+  errorType:
+    description: This type is used to provide detailed information about the error occured in a generic matter.All APIs should incorporate this object.
+    type: object
+    properties:
+      code:
+        type: integer
+        description: Code of the error , can be internal error code specific to the working of the api that can be referenced by the 'additionalDocumentation' field.
+        required: true
+      message:
+        type: string
+        description: A human readable message that describes the error/exception occured.
+        required: true
+      description:
+        type: string
+        description: A human readable comprehensive explanation of error/exception occured.
+        required: false
+      validationErrors:
+        type: fieldValidationType[]
+        description: If the error is a bad request,this object is populated with the fields and errors.
+        required: false
+      dateTime:
+        type: datetime
+        description: The date-time stamp of the occured error
+        required: true
+      transactionId:
+        type: string
+        description: Internal identifier of the transaction that failed
+        required: true
+      additionalDocumentationURL:
+        type: string
+        description: URL to exchange where additional information can be found of the exception, mostly the case for non standard exception.
+        required: false
+      
+      
+
+
+
+
+
+
+
+
+  

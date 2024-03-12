@@ -1,0 +1,14 @@
+http:
+  port: "8081"
+
+db:
+  uhub:
+    host: "oracle-165611-0.cloudclusters.net"
+    port: "15486"
+    user: "uhubdevuser"
+    password: "![bvyAf0AD1E5vGKHmZFGFAw==]"
+    instance: "XE"
+api:
+  id: "19358243"
+  flowname: "uhub-sapi-main"
+
